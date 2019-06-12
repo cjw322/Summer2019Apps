@@ -28,6 +28,11 @@ class ViewController: UIViewController {
         inputTextField.keyboardType = UIKeyboardType.numberPad
         self.addDoneButtonOnKeyboard()
         
+        let transparentWhite = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
+        convertButton.backgroundColor = transparentWhite
+        outputLabel.backgroundColor = transparentWhite
+        outputLabel.text = "0.0"
+        
         setUpConstraints()
         
     }
