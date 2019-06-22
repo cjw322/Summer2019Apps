@@ -137,8 +137,8 @@
                                     <constraint firstAttribute="width" secondItem="rFk-eJ-7lu" secondAttribute="height" multiplier="3.5:1" id="vcM-oA-mTg"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="j31-b6-qJU">
-                                <rect key="frame" x="330" y="310" width="60" height="380"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="equalSpacing" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j31-b6-qJU">
+                                <rect key="frame" x="330" y="310" width="60" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdL-qM-oxL">
@@ -154,7 +154,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CZ-5C-u9L">
-                                        <rect key="frame" x="0.0" y="80" width="60" height="60"/>
+                                        <rect key="frame" x="0.0" y="60" width="60" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="0.54778467470000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" placeholder="YES" id="hJ9-dn-C0X"/>
@@ -166,7 +166,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4En-ma-XxS">
-                                        <rect key="frame" x="0.0" y="160" width="60" height="60"/>
+                                        <rect key="frame" x="0.0" y="120" width="60" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="0.54778467470000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" placeholder="YES" id="88c-13-4Ph"/>
@@ -178,7 +178,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtg-gc-ghT">
-                                        <rect key="frame" x="0.0" y="240" width="60" height="60"/>
+                                        <rect key="frame" x="0.0" y="180" width="60" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="0.54778467470000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" placeholder="YES" id="aL7-mF-won"/>
@@ -190,7 +190,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBz-8R-5VR">
-                                        <rect key="frame" x="0.0" y="320" width="60" height="60"/>
+                                        <rect key="frame" x="0.0" y="240" width="60" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="0.54778467470000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" placeholder="YES" id="Qvo-kF-Bf7"/>

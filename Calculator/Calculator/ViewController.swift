@@ -122,7 +122,7 @@ class ViewController: UIViewController {
 
             ])
         
-        for stackView in myStackViews {
+        for stackView in horizontalStackViews {
             stackView.spacing = oneStackView.spacing
         }
         
