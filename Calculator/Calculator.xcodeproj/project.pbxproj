@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE15B76622CAC2E800D3A2AC /* OperatorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B76522CAC2E800D3A2AC /* OperatorEnum.swift */; };
+		CE15B76822CAC4DE00D3A2AC /* CalcStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15B76722CAC4DE00D3A2AC /* CalcStateEnum.swift */; };
 		CE7887EA22B0B5E7001A0F2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7887E922B0B5E7001A0F2B /* AppDelegate.swift */; };
 		CE7887EC22B0B5E7001A0F2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7887EB22B0B5E7001A0F2B /* ViewController.swift */; };
 		CE7887EF22B0B5E7001A0F2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7887ED22B0B5E7001A0F2B /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE15B76522CAC2E800D3A2AC /* OperatorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorEnum.swift; sourceTree = "<group>"; };
+		CE15B76722CAC4DE00D3A2AC /* CalcStateEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcStateEnum.swift; sourceTree = "<group>"; };
 		CE7887E622B0B5E7001A0F2B /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7887E922B0B5E7001A0F2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE7887EB22B0B5E7001A0F2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				CE7887F022B0B5EA001A0F2B /* Assets.xcassets */,
 				CE7887F222B0B5EA001A0F2B /* LaunchScreen.storyboard */,
 				CE7887F522B0B5EA001A0F2B /* Info.plist */,
+				CE15B76522CAC2E800D3A2AC /* OperatorEnum.swift */,
+				CE15B76722CAC4DE00D3A2AC /* CalcStateEnum.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7887EC22B0B5E7001A0F2B /* ViewController.swift in Sources */,
+				CE15B76622CAC2E800D3A2AC /* OperatorEnum.swift in Sources */,
 				CE7887EA22B0B5E7001A0F2B /* AppDelegate.swift in Sources */,
+				CE15B76822CAC4DE00D3A2AC /* CalcStateEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
