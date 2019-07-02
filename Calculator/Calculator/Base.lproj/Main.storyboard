@@ -140,7 +140,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYL-d1-cfU">
-                                        <rect key="frame" x="90" y="0.0" width="170.00000000000023" height="80"/>
+                                        <rect key="frame" x="90" y="0.0" width="170" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="170" id="3kA-R6-q4S"/>
                                         </constraints>
