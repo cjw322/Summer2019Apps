@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     var currentOperator: Operator = Operator.NONE
     var firstValue: String = ""
     
+    @IBOutlet weak var mainStackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
@@ -25,6 +27,33 @@ class ViewController: UIViewController {
         //view.backgroundColor = .white
         
         displayLabel.text = "0"
+        
+        setMainSVSizes()
+        setNumButtonSizes()
+    }
+    
+    func setMainSVSizes() {
+        // leave 1/10 space on both sides
+        
+        let width = (4/5) * self.view.frame.width
+        let height = (4/5) * self.view.frame.height
+        
+        NSLayoutConstraint.activate([
+            mainStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            mainStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            mainStackView.widthAnchor.constraint(equalToConstant: width),
+            mainStackView.heightAnchor.constraint(equalToConstant: height)
+            ])
+        
+        print(self.view.frame.width)
+        
+//        switch self.view.frame.width {
+//
+//        }
+    }
+    
+    func setNumButtonSizes() {
+        
     }
     
     @IBAction func numberClicked (_ sender: UIButton) {
@@ -61,7 +90,7 @@ class ViewController: UIViewController {
         if let num = displayLabel.text {
             if num != "0" && num != "" {
                 firstValue = num
-                displayLabel.text = "0"
+                displayLabel.text = ""
             }
         }
         
@@ -84,6 +113,15 @@ class ViewController: UIViewController {
         break;
         default:
             return
+        }
+    }
+    
+    @IBAction func clearClicked(_ sender: UIButton) {
+        displayLabel.text = ""
+        if calcState == CalcState.newNumStarted {
+            currentOperator = Operator.NONE
+            firstValue = ""
+            calcState = CalcState.enteringNum
         }
     }
     
