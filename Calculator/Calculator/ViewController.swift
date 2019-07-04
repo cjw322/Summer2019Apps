@@ -12,12 +12,22 @@ class ViewController: UIViewController {
     
     var backgroundImage: UIImageView!
     
-    @IBOutlet weak var displayLabel: UILabel!
     var calcState: CalcState = CalcState.enteringNum
     var currentOperator: Operator = Operator.NONE
     var firstValue: String = ""
     
+    @IBOutlet weak var displayLabel: UILabel!
+    @IBOutlet weak var calculatorLabel: UILabel!
+    @IBOutlet weak var equalsButton: UIButton!
+    
     @IBOutlet weak var mainStackView: UIStackView!
+    @IBOutlet weak var oneStackView: UIStackView!
+    @IBOutlet weak var fourStackView: UIStackView!
+    @IBOutlet weak var sevenStackView: UIStackView!
+    @IBOutlet weak var zeroStackView: UIStackView!
+    @IBOutlet weak var numPadStackView: UIStackView!
+    @IBOutlet weak var opStackView: UIStackView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,29 +40,108 @@ class ViewController: UIViewController {
         
         setMainSVSizes()
         setNumButtonSizes()
+        setOpButtonSizes()
     }
     
     func setMainSVSizes() {
         // leave 1/10 space on both sides
         
-        let width = (4/5) * self.view.frame.width
-        let height = (4/5) * self.view.frame.height
+        var spacing: CGFloat
+        
+        if (self.view.frame.width/self.view.frame.height <= 7/10) {
+            spacing = (1/20) * self.view.frame.height
+        } else {
+            spacing = (1/40) * self.view.frame.height
+        }
+        
+//        let width = (4/5) * self.view.frame.width
+//        let height = (3/5) * self.view.frame.height
+//        let offset = -(1/10) * self.view.frame.height
+        
+        mainStackView.spacing = spacing
         
         NSLayoutConstraint.activate([
             mainStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            mainStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            mainStackView.widthAnchor.constraint(equalToConstant: width),
-            mainStackView.heightAnchor.constraint(equalToConstant: height)
+            mainStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            displayLabel.widthAnchor.constraint(equalTo: mainStackView.widthAnchor),
+            
+            //mainStackView.widthAnchor.constraint(equalToConstant: width),
+            //mainStackView.heightAnchor.constraint(equalToConstant: height)
             ])
         
-        print(self.view.frame.width)
+//        print(self.view.frame.width)
+//        print(self.view.frame.height)
         
-//        switch self.view.frame.width {
-//
-//        }
+        switch self.view.frame.width {
+        case 0...400:
+            calculatorLabel.font = calculatorLabel.font.withSize(40)
+            break
+        case 400...600:
+            calculatorLabel.font = calculatorLabel.font.withSize(50)
+            break
+        case 600...1000:
+            calculatorLabel.font = calculatorLabel.font.withSize(100)
+            break
+        case 1000...2000:
+            calculatorLabel.font = calculatorLabel.font.withSize(150)
+            break
+        default:
+            break
+        }
+        
+        displayLabel.font = calculatorLabel.font
     }
     
     func setNumButtonSizes() {
+        // height is 1/5 of view's width
+        // spacing is 1/8 height --> 1/40 width
+        
+        var height: CGFloat
+        
+        if (self.view.frame.width/self.view.frame.height <= 7/10) {
+            height = (1/5) * self.view.frame.width
+        } else {
+            height = (1/6) * self.view.frame.width
+        }
+        let spacing = (1/8) * height
+        let width = height*3 + spacing*2
+        
+        numPadStackView.spacing = spacing
+        
+        let numStackViews = [oneStackView, fourStackView, sevenStackView, zeroStackView]
+        
+        for possibleStackView in numStackViews {
+            if let stackView = possibleStackView {
+                stackView.spacing = spacing
+            
+                NSLayoutConstraint.activate([
+                    equalsButton.widthAnchor.constraint(equalToConstant: (2*height + spacing)),
+                    stackView.heightAnchor.constraint(equalToConstant: height),
+                    stackView.widthAnchor.constraint(equalToConstant: width)
+                    ])
+            }
+        }
+        
+    }
+    
+    func setOpButtonSizes() {
+        var numHeight: CGFloat
+        
+        if (self.view.frame.width/self.view.frame.height <= 7/10) {
+            numHeight = (1/5) * self.view.frame.width
+        } else {
+            numHeight = (1/6) * self.view.frame.width
+        }
+        
+        let npSpacing = (1/8) * numHeight
+        let npHeight = 4 * numHeight + 3 * npSpacing
+        
+        let opWidth = (1/5) * (npHeight - 3*npSpacing)
+        
+        NSLayoutConstraint.activate([
+            opStackView.widthAnchor.constraint(equalToConstant: opWidth)
+            ])
         
     }
     
@@ -153,7 +242,7 @@ class ViewController: UIViewController {
             return
         }
         
-        displayLabel.text = result
+        displayLabel.text = "\(round(1000*Double(result)!)/1000)"
         calcState = CalcState.newNumStarted
         firstValue = result
     }
