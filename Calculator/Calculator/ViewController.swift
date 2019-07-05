@@ -186,19 +186,19 @@ class ViewController: UIViewController {
         switch sender.tag {
         case 10:
             currentOperator = Operator.PLUS
-            print("plus")
+            //print("plus")
         break;
         case 11:
             currentOperator = Operator.MINUS
-            print("minus")
+            //print("minus")
         break;
         case 12:
             currentOperator = Operator.TIMES
-            print("times")
+            //print("times")
         break;
         case 13:
             currentOperator = Operator.DIVIDE
-            print("divide")
+            //print("divide")
         break;
         default:
             return
@@ -223,10 +223,10 @@ class ViewController: UIViewController {
             return
         }
         
-        print(firstValue)
-        print(Double(firstValue))
-        print( "display label \(Double(displayLabel.text!))")
-        print(Double(firstValue)! + Double(displayLabel.text!)!)
+        //print(firstValue)
+        //print(Double(firstValue))
+        //print( "display label \(Double(displayLabel.text!))")
+        //print(Double(firstValue)! + Double(displayLabel.text!)!)
         
         var result = ""
         switch currentOperator {
