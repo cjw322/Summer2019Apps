@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     var calcState: CalcState = CalcState.enteringNum
     var currentOperator: Operator = Operator.NONE
-    var firstValue: String = ""
+    var firstValue: String = " "
     
     @IBOutlet weak var displayLabel: UILabel!
     @IBOutlet weak var calculatorLabel: UILabel!
@@ -154,7 +154,7 @@ class ViewController: UIViewController {
     func updateDisplay (number: String) {
         if calcState == CalcState.newNumStarted {
             if let num = displayLabel.text {
-                if num != "" && num != "0" {
+                if num != "" && num != "0" && num != " " {
                     firstValue = num
                 }
             }
@@ -164,7 +164,7 @@ class ViewController: UIViewController {
             
         } else if calcState == CalcState.enteringNum {
             if let num = displayLabel.text {
-                if num == "0" {
+                if num == "0" || num == " " {
                     displayLabel.text = number
                 } else {
                     displayLabel.text = num + number
@@ -177,9 +177,9 @@ class ViewController: UIViewController {
         calcState = CalcState.newNumStarted
         
         if let num = displayLabel.text {
-            if num != "0" && num != "" {
+            if num != "0" && num != "" && num != " " {
                 firstValue = num
-                displayLabel.text = ""
+                displayLabel.text = " "
             }
         }
         
@@ -206,7 +206,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clearClicked(_ sender: UIButton) {
-        displayLabel.text = ""
+        displayLabel.text = " "
         if calcState == CalcState.newNumStarted {
             currentOperator = Operator.NONE
             firstValue = ""
